@@ -7,18 +7,27 @@ import Skills from './components/skills/Skills';
 import { Counter } from './components/counter/Counter';
 import { MuiMode } from './components/mui/MuiModes';
 import { AppProviders } from './providers/AppProviders';
+import Navbar from './contextapi/Navbar';
+import AuthProvider from './contextapi/UserContext';
+import AuthComponent from './contextapi/AuthComponent';
 
 function App() {
 	return (
-		<AppProviders>
-			<div className="App">
-				{/* <Application />
+		<AuthProvider>
+			<AppProviders>
+				<div className="App">
+					{/* <Application />
 			<Skills skills={['HTML', 'CSS']} />
 			<Counter /> */}
 
-				<MuiMode />
-			</div>
-		</AppProviders>
+					<MuiMode />
+
+					{/* demo: Context API With Typescript not releated to testing */}
+					<AuthComponent />
+					<Navbar />
+				</div>
+			</AppProviders>
+		</AuthProvider>
 	);
 }
 
